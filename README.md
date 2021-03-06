@@ -1,0 +1,2 @@
+# Angular-Pagination
+The PaginatePipe should be placed at the end of an NgFor expression. It accepts a single argument, an object conforming to the PaginationInstance interface. The following config options are available:  &lt;some-element *ngFor="let item of collection | paginate: { id: 'foo',                                                       itemsPerPage: pageSize,                                                       currentPage: p,                                                       totalItems: total }">...&lt;/some-element>
