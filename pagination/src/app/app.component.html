@@ -1,0 +1,66 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angulr Pagination</title>
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
+  <body>
+    <div class="container">
+    
+      <button class="btn btn-primary" (click)="userListHandler()">
+        USERS List
+      </button>
+      ||
+      <button class="btn btn-primary">Hello worled BTN</button>
+     
+      <table class="table table striped">
+        <thead>
+          <tr>
+            <th>Gender</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Picture</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor= "
+              let user of allUsers
+                | paginate
+                  :{ id:'listing_pagination', currentPage: page, itemsPerPage: 5 }; 
+                     
+            "
+           
+          >
+          <td>{{user.gender}}</td>
+          <td>{{user.name.first}}</td>
+          <td>{{user.email}}</td>
+          <td>
+            <img src="{{user.picture.medium}}" alt="">
+          </td>
+        </tr>
+        </tbody>
+        
+      </table>
+      <div>
+      <pagination-controls id='listing_pagination'  (pageChange)="page = $event"></pagination-controls> 
+      </div>
+    </div>
+  </body>
+</html> -->
+<!--   -->
+<!-- https://www.youtube.com/watch?v=MMo7iq_4BRc -->
+
+<div>
+  <div class="nav">
+    <a [routerLink]="['users']">USERS</a>
+    <a [routerLink]="['posts']">POSTS</a>
+  </div>
+  <router-outlet></router-outlet>
+</div>

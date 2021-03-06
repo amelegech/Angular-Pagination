@@ -1,0 +1,59 @@
+
+<div class="container">
+    <!-- <div class="users" *ngFor="let user of allUsers">
+      {{ user.name[0].first }} -->
+      <!-- <div class="user-name" *ngFor= "let elem of user[1]">
+   {{elem.first}}
+      </div>  -->
+    <!-- </div> -->
+  
+    <button class="btn btn-primary" (click)="userListHandler()">
+      USERS List
+    </button>
+    
+   
+    <table class="table table striped">
+      <thead>
+        <tr>
+          <th>Gender</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Picture</th>
+        </tr>
+      </thead>
+      <tbody>
+       <tr   
+          *ngFor= "
+            let user of allUsers
+              | paginate
+                :{ id:'listing_pagination', currentPage: page, itemsPerPage: 5 }; 
+                   
+          "
+         
+        >
+        <td>{{user.gender}}</td>
+        <a [routerLink]="[user.email]" > <td >{{user.name.first}}</td></a>
+        <td>{{user.email}}</td>
+        <td>
+          <img src="{{user.picture.medium}}" alt="">
+        </td>
+      </tr>
+      </tbody>
+      
+    </table>
+    <!-- <ul *ngFor= "
+    let user of allUsers
+      | paginate
+        :{ id:'listing_pagination', currentPage: page, itemsPerPage: 5 }; 
+           
+  ">
+      <li>{{user.gender}}
+      {{user.name.first}}
+      {{user.email}}
+      <img src="{{user.picture.medium}}" alt=""> </li>
+    </ul> -->
+  
+    <div>
+    <pagination-controls id='listing_pagination'  (pageChange)="page = $event"></pagination-controls> 
+    </div>
+  </div>
